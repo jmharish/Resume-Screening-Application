@@ -23,3 +23,5 @@ stores the path of the upload folder i.e. "Files"
 *activate the virtual environment in the directory where Project folder is placed
 ** create an empty folder named "Files" in Project folder
 
+## pickled folder:
+stores all the pickle files mentioned above
