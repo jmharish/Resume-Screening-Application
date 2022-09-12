@@ -1,0 +1,16 @@
+<html>
+   <head>
+      <style>
+         body {background-color: rgb(112, 209, 233); margin: 5; font-family: sans-serif;}
+         h1   {color: blue;}
+         p    {color: red;}
+      </style>
+   <body>
+      <form action = "http://localhost:5000/uploader" method = "POST" 
+         enctype = "multipart/form-data" style="border:darkcyan; border-width:10px; border-style:solid;border-image: fill;background-color: powderblue;">
+         <input type = "file" name = "files[]" multiple="True" autocomplete="off" required style="text-align: center;font-size: 25; margin-top:100px; margin-left: 300px;">
+         <input type = "submit" style="text-align: center;font-size: 25;"/>
+      </form>
+   </body>
+   </head>
+</html>
