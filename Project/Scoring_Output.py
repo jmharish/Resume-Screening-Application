@@ -26,7 +26,7 @@ from cmath import nan
 path = config("paths")
 
 def test(p):
-    pkl_file = open("C:\Harish\iGreenData_internship\pickled\Features.pickle","rb")
+    pkl_file = open("C:\Harish\iGreenData_internship\pickled\Features.pickle","rb") ## change path accordingly
     lf = pickle.load(pkl_file) # list of features, check if they are there in resume or not
     pkl_file.close()
 
@@ -61,7 +61,7 @@ def test(p):
     df2.fillna(0,inplace = True)
     
 
-    pkl_file = open("C:\Harish\iGreenData_internship\pickled\Voted_clf.pickle","rb")
+    pkl_file = open("C:\Harish\iGreenData_internship\pickled\Voted_clf.pickle","rb") ## change path accordingly
     vote_clf = pickle.load(pkl_file)
     pkl_file.close()
 
@@ -77,7 +77,6 @@ def test(p):
     df = pd.DataFrame()
     
     l = ['Automation Testing', 'Blockchain', 'Business Analyst', 'Civil Engineer', 'Data_Analyst', 'Database', 'DevOps', 'DotNet Developer', 'ETL Developer', 'Electrical Engineering', 'Hadoop', 'Java', 'Mechanical Engineer', 'Network Security Engineer', 'Operations Manager', 'Python Developer', 'SAP Developer', 'SRE', 'Testing', 'Web Designing']
-    #l = ['Automation Testing', 'Blockchain', 'Business Analyst', 'Data_Analyst', 'Database', 'DevOps', 'DotNet Developer', 'ETL Developer', 'Hadoop', 'Java', 'Network Security Engineer', 'Python Developer', 'SAP Developer', 'SRE', 'Testing', 'Web Designing']
     for j in range(len(l)) :
         df[l[j]] = [i[j]*100 for i in l_prob]
     l_lbl = list(vote_clf.predict(df2))
@@ -112,7 +111,7 @@ def test(p):
     pie_label = [i+" "+str(dic[i]) for i in list(set(df['Predicted Label']))]
     plt.figure()
     plt.pie(label_count,labels=pie_label)
-    fid = open("C:\Harish\iGreenData_internship\pickled\Output_chart.png","wb")
+    fid = open("C:\Harish\iGreenData_internship\pickled\Output_chart.png","wb") ## change path accordingly
     plt.savefig(fid)  #stores chart as png file
     fid.close()"""
      
@@ -151,12 +150,7 @@ def pdf_ext(filename):
         return 0
     next_title_ind  = lt.index(lp[len(lp)-1])+1 # to check if there are headings after project
     proj ="" # stores the text contained within the project section alone
-    """if next_title_ind < len(lt):
-        proj = raw_txt[raw_txt.index(lp[0]):raw_txt.index(lt[next_title_ind])]
-    else:
-        proj = raw_txt[raw_txt.index(lp[0]):len(raw_txt)]"""
     proj = raw_txt[raw_txt.index(lp[0]):len(raw_txt)]
-    #proj = raw_txt[raw_txt.index(lp[0]):len(raw_txt)]
     
 
 
@@ -212,10 +206,6 @@ def DOC_ext(filename):
         return 0
     next_title_ind  = lt.index(lp[len(lp)-1])+1 # to check if there are headings after project
     proj ="" # stores the text contained within the project section alone
-    """if next_title_ind < len(lt):
-        proj = raw_txt[raw_txt.index(lp[0]):raw_txt.index(lt[next_title_ind])]
-    else:
-        proj = raw_txt[raw_txt.index(lp[0]):len(raw_txt)]"""
     proj = raw_txt[raw_txt.index(lp[0]):len(raw_txt)]
     
     
@@ -243,7 +233,6 @@ def DOC_ext(filename):
     di =  ResumeParser("Temp.pdf").get_extracted_data()
     #the Temp pdf is used to extract the skills within the project section 
 
-    #print(sub_title)
 
     
     os.remove("Temp1.txt")
