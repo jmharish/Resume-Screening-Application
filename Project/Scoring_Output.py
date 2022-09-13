@@ -26,7 +26,7 @@ from cmath import nan
 path = config("paths")
 
 def test(p):
-    pkl_file = open("C:\Harish\iGreenData_internship\pickled\Features.pickle","rb") ## change path accordingly
+    pkl_file = open("C:\Harish\iGreenData_internship\pickled\Features.pickle","rb")  ## change path accordingly to pickled folder location
     lf = pickle.load(pkl_file) # list of features, check if they are there in resume or not
     pkl_file.close()
 
@@ -61,7 +61,7 @@ def test(p):
     df2.fillna(0,inplace = True)
     
 
-    pkl_file = open("C:\Harish\iGreenData_internship\pickled\Voted_clf.pickle","rb") ## change path accordingly
+    pkl_file = open("C:\Harish\iGreenData_internship\pickled\Voted_clf.pickle","rb")  ## change path accordingly to pickled folder location
     vote_clf = pickle.load(pkl_file)
     pkl_file.close()
 
@@ -101,7 +101,7 @@ def test(p):
     
     return df
     
-    """fid = open("C:\Harish\iGreenData_internship\pickled\Output.csv","w")
+    """fid = open("C:\Harish\iGreenData_internship\pickled\Output.csv","w")  ## change path accordingly to pickled folder location
     df.to_csv(fid)  #stored in the csv file
     fid.close()
     c = Counter(df['Predicted Label'])
