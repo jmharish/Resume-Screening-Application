@@ -7,7 +7,7 @@ import os
 import io
 app = Flask(__name__)
 
-app.config['UPLOAD_FOLDER'] = 'C:\Harish\iGreenData_internship\Project\Files'
+app.config['UPLOAD_FOLDER'] = 'C:\Harish\iGreenData_internship\Project\Files' ## change path accordingly
 
 #the destination to store the uploaded files
 
