@@ -10,19 +10,19 @@ from pandas import DataFrame as df
 from pandas import Series as s
 import pickle
 
-pkl_file = open("C:\Harish\iGreenData_internship\pickled\X_Train.pickle","rb")
+pkl_file = open("C:\Harish\iGreenData_internship\pickled\X_Train.pickle","rb")  ## change path accordingly to pickled folder location
 X_Train = pickle.load(pkl_file)
 pkl_file.close()
 
-pkl_file = open("C:\Harish\iGreenData_internship\pickled\Y_Train.pickle","rb")
+pkl_file = open("C:\Harish\iGreenData_internship\pickled\Y_Train.pickle","rb")  ## change path accordingly to pickled folder location
 Y_Train = pickle.load(pkl_file)
 pkl_file.close()
 
-pkl_file = open("C:\Harish\iGreenData_internship\pickled\X_val.pickle","rb")
+pkl_file = open("C:\Harish\iGreenData_internship\pickled\X_val.pickle","rb")  ## change path accordingly to pickled folder location
 X_val = pickle.load(pkl_file)
 pkl_file.close()
 
-pkl_file = open("C:\Harish\iGreenData_internship\pickled\Y_val.pickle","rb")
+pkl_file = open("C:\Harish\iGreenData_internship\pickled\Y_val.pickle","rb")  ## change path accordingly to pickled folder location
 Y_val = pickle.load(pkl_file)
 pkl_file.close()
 
@@ -32,11 +32,11 @@ print(list(X_Train.columns))
  # the columns give the dimension or attributes using which a resume should be represented 
 
 l = list(X_Train.columns)
-pkl_file = open("C:\Harish\iGreenData_internship\pickled\Features.pickle","wb") 
+pkl_file = open("C:\Harish\iGreenData_internship\pickled\Features.pickle","wb")  ## change path accordingly to pickled folder location
 pickle.dump(l,pkl_file)
 pkl_file.close()
 
-"""mNB_clf = MultinomialNB(alpha = 100)
+"""mNB_clf = MultinomialNB(alpha = 100) # Regularized classifiers not preferred
 bNB_clf = BernoulliNB(alpha = 100)
 cNB_clf = ComplementNB(alpha = 100)
 svm_clf = svm.SVC(C= 0.01,kernel ='linear',probability=True)
@@ -58,7 +58,7 @@ vote_clf = vote_clf.fit(X_Train,Y_Train)
 
 
 
-pkl_file = open("C:\Harish\iGreenData_internship\pickled\Voted_clf.pickle","wb") 
+pkl_file = open("C:\Harish\iGreenData_internship\pickled\Voted_clf.pickle","wb")  ## change path accordingly to pickled folder location
 pickle.dump(vote_clf,pkl_file)
 pkl_file.close()
 
