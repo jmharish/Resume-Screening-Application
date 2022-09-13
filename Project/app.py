@@ -1,10 +1,7 @@
 import flask
 from flask import Flask , render_template , url_for , request ,Response
-from flask_sqlalchemy import SQLAlchemy
-from werkzeug.utils import secure_filename
 from werkzeug.wrappers import Response
 from Scoring_Output import test , path
-import flask_excel as exc 
 import pandas as pd
 import os 
 import io
