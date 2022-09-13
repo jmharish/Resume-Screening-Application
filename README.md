@@ -1,5 +1,5 @@
 # Resume-Screening-Application
-## The application acctes .docx and .pdf files 
+## The application accepts .docx and .pdf files 
 ## The Project folder contains the python files to be executed 
 ## 1 PreProcessing.py -  
 pre processing the resumes and dataset splitting, 
