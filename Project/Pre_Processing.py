@@ -5,8 +5,8 @@ import pickle
 from fpdf import FPDF
 
 ####################### actual resumes are extrcated ###################
-"""os.chdir("C:\Harish\iGreenData_internship\Dummy Resumes - AI_ML Internship\labeled_resumes")#location of resumes
-l = os.listdir("C:\Harish\iGreenData_internship\Dummy Resumes - AI_ML Internship\labeled_resumes")
+"""os.chdir("C:\Harish\iGreenData_internship\Dummy Resumes - AI_ML Internship\labeled_resumes")## change path accordingly to location of  input resumes
+l = os.listdir("C:\Harish\iGreenData_internship\Dummy Resumes - AI_ML Internship\labeled_resumes") ## change path accordingly same as above path
 L_ser =[]
 L_labels = []
 L_index = []
@@ -37,11 +37,11 @@ df2 = pd.DataFrame(L_ser,index = L_index)
 
 df2["Label"] = L_labels
 
-pkl_file = open("C:\Harish\iGreenData_internship\pickled\labeled_dataframe.pickle","wb") #pickling; need not fit every time
+pkl_file = open("C:\Harish\iGreenData_internship\pickled\labeled_dataframe.pickle","wb") ## change path accordingly to pickled folder location
 pickle.dump(df2,pkl_file)
 pkl_file.close()
 
-pkl_file = open("C:\Harish\iGreenData_internship\pickled\labeled_dataframe.pickle","rb")
+pkl_file = open("C:\Harish\iGreenData_internship\pickled\labeled_dataframe.pickle","rb") ## change path accordingly to pickled folder location
 df2 = pickle.load(pkl_file)
 pkl_file.close()
 
@@ -50,8 +50,8 @@ print(len(df2))
 print(set(df2["Label"]))
 """
 """######### Kaggle resumes are extracted #################################
-os.chdir("C:\Harish\iGreenData_internship\Kaggle Dataset")
-df1 = pd.read_csv("UpdatedResumeDataSet.csv") 
+os.chdir("C:\Harish\iGreenData_internship\Kaggle Dataset") ## change path according to  location of Kaggle dataset 
+df1 = pd.read_csv("UpdatedResumeDataSet.csv") ## give the kaggle dataset folder name
 L_index = []
 L_ser =[]
 L_labels = list(df1["Category"])
@@ -79,7 +79,7 @@ for i in range(len(df1["Resume"])):
     f.close()
     pdf.output("Temp.pdf")
 
-    di =  ResumeParser("C:\Harish\iGreenData_internship\Kaggle Dataset\Temp.pdf").get_extracted_data() #parsing pdf to pyreparser
+    di =  ResumeParser("C:\Harish\iGreenData_internship\Kaggle Dataset\Temp.pdf").get_extracted_data() ## change path accordingly to any location for a temporary file
     d = dict({})
     for ic in di['skills']:
         d[ic.lower()] = True
@@ -93,11 +93,11 @@ df["Label"] = L_labels
 
 
 
-pkl_file = open("C:\Harish\iGreenData_internship\pickled\Kaggle_labeled_dataframe.pickle","wb") #pickling; need not fit every time
+pkl_file = open("C:\Harish\iGreenData_internship\pickled\Kaggle_labeled_dataframe.pickle","wb") ## change path accordingly pickled folder location
 pickle.dump(df,pkl_file)
 pkl_file.close()
 
-pkl_file = open("C:\Harish\iGreenData_internship\pickled\Kaggle_labeled_dataframe.pickle","rb")# kaggle resumes
+pkl_file = open("C:\Harish\iGreenData_internship\pickled\Kaggle_labeled_dataframe.pickle","rb") ## change path accordingly pickled folder location
 df = pickle.load(pkl_file)
 pkl_file.close()
 d = pd.DataFrame()
@@ -135,7 +135,7 @@ cf = cf.append(c,ignore_index = False )
 
 
 
-pkl_file = open("C:\Harish\iGreenData_internship\pickled\labeled_dataframe.pickle","rb")#sample resumes 
+pkl_file = open("C:\Harish\iGreenData_internship\pickled\labeled_dataframe.pickle","rb") ## change path accordingly pickled folder location
 dfb = pickle.load(pkl_file)
 pkl_file.close()
 
@@ -153,7 +153,7 @@ dfb = dfb.append(cf,ignore_index = False)
 dfb.fillna(False,inplace = True)
 dfb.replace(True,1,inplace = True)
 dfb.replace(False,0,inplace = True)
-pkl_file = open("C:\Harish\iGreenData_internship\pickled\Final_labeled_dataframe.pickle","wb") #pickling; need not fit every time
+pkl_file = open("C:\Harish\iGreenData_internship\pickled\Final_labeled_dataframe.pickle","wb") ## change path accordingly to pickled folder location
 pickle.dump(dfb,pkl_file)
 pkl_file.close()
 print(dfb.head())
@@ -169,7 +169,7 @@ from sklearn.model_selection import StratifiedKFold
 from collections import Counter
 import matplotlib.pyplot as plt
 
-pkl_file = open("C:\Harish\iGreenData_internship\pickled\Final_labeled_dataframe.pickle","rb")
+pkl_file = open("C:\Harish\iGreenData_internship\pickled\Final_labeled_dataframe.pickle","rb") ## change path accordingly to pickled folder location
 df = pickle.load(pkl_file)
 pkl_file.close()
 
@@ -251,30 +251,30 @@ print(df.head())
 
 
 #pickling the train sets 
-pkl_file = open("C:\Harish\iGreenData_internship\pickled\X_Train.pickle","wb") 
+pkl_file = open("C:\Harish\iGreenData_internship\pickled\X_Train.pickle","wb") ## change path accordingly to pickled folder location
 pickle.dump(X_train,pkl_file)
 pkl_file.close()
 
-pkl_file = open("C:\Harish\iGreenData_internship\pickled\Y_Train.pickle","wb") 
+pkl_file = open("C:\Harish\iGreenData_internship\pickled\Y_Train.pickle","wb")  ## change path accordingly to pickled folder location
 pickle.dump(Y_train,pkl_file)
 pkl_file.close()
 
 # pickling the validation sets 
-pkl_file = open("C:\Harish\iGreenData_internship\pickled\X_Val.pickle","wb") 
+pkl_file = open("C:\Harish\iGreenData_internship\pickled\X_Val.pickle","wb")  ## change path accordingly to pickled folder location
 pickle.dump(x_val,pkl_file)
 pkl_file.close()
 
-pkl_file = open("C:\Harish\iGreenData_internship\pickled\Y_Val.pickle","wb") 
+pkl_file = open("C:\Harish\iGreenData_internship\pickled\Y_Val.pickle","wb")  ## change path accordingly to pickled folder location
 pickle.dump(y_val,pkl_file)
 pkl_file.close()
 
 #pickling test sets
 
-pkl_file = open("C:\Harish\iGreenData_internship\pickled\X_Test.pickle","wb") 
+pkl_file = open("C:\Harish\iGreenData_internship\pickled\X_Test.pickle","wb")  ## change path accordingly to pickled folder location
 pickle.dump(x_test,pkl_file)
 pkl_file.close()
 
-pkl_file = open("C:\Harish\iGreenData_internship\pickled\Y_Test.pickle","wb") 
+pkl_file = open("C:\Harish\iGreenData_internship\pickled\Y_Test.pickle","wb")  ## change path accordingly to pickled folder location
 pickle.dump(y_test,pkl_file)
 pkl_file.close()
 
